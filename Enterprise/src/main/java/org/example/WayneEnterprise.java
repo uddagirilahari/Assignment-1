@@ -10,7 +10,7 @@ public class WayneEnterprise{
     private int orderCancelled=0;
     private int shipMinCargo= 50;
     private int shipMaxCargo = 300;
-    private int shipMaintainence = 6;
+    private int shipMaintainence = 5;
     private int earnings=0;
     private Ship[] ships;
     private Object orderLock = new Object();
@@ -89,7 +89,7 @@ public class WayneEnterprise{
                     s.location = (s.location.equals("Gotham"))?"Atlanta":"Gotham";
                     s.trips+=1;
                 }
-                if(s.trips>=shipMaintainence){
+                if(s.trips>shipMaintainence){
                     s.inMaintainence=true;
                     s.trips = 0;
                 }
